@@ -1,10 +1,11 @@
-import { Box, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Heading, Box, UnorderedList, ListItem } from "@chakra-ui/react";
 import Link from "next/link";
 import { client } from "../libs/client";
 
 export default function Home({ blog }) {
 	return (
 		<Box>
+			<Heading as="h3">Nutrition Blog</Heading>
 			<UnorderedList>
 				{blog.map((blog) => (
 					<ListItem key={blog.id}>
