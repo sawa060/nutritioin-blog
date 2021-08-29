@@ -20,7 +20,7 @@ export default function Home({ blog }) {
       </Heading>
       <Box mt={2}>
         {blog.map((blog) => (
-          <Box>
+          <Box key={blog.id}>
             <Text fontWeight="bold" fontSize="sm">
               {format(new Date(blog.createdAt), "yyyy-MM-dd HH:mm:ss")}
             </Text>
