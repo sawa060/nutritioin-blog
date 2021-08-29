@@ -1,11 +1,12 @@
-import { Heading, Box, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Heading, Container, UnorderedList, ListItem } from "@chakra-ui/react";
 import Link from "next/link";
 import { client } from "../libs/client";
 
 export default function Home({ blog }) {
   return (
-    <Box>
+    <Container maxW="container.lg">
       <Heading as="h3">Nutrition Blog</Heading>
+      <Heading as="h6">記事一覧</Heading>
       <UnorderedList>
         {blog.map((blog) => (
           <ListItem key={blog.id}>
@@ -15,7 +16,7 @@ export default function Home({ blog }) {
           </ListItem>
         ))}
       </UnorderedList>
-    </Box>
+    </Container>
   );
 }
 

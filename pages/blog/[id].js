@@ -1,9 +1,11 @@
 import { client } from "../../libs/client";
+import Link from "next/link";
 import { Heading } from "@chakra-ui/react";
 
 export default function BlogId({ blog }) {
   return (
     <main>
+      <Link href="/">戻る</Link>
       <Heading as="h1">{blog.title}</Heading>
       <p>{blog.publishedAt}</p>
       <div
