@@ -10,7 +10,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.{ts,tsx}"],
+      files: ["**/*.{ts,tsx,js,jsx}"],
       extends: [
         "eslint:recommended",
         "plugin:react/recommended",
