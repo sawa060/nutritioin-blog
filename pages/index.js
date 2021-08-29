@@ -3,29 +3,29 @@ import Link from "next/link";
 import { client } from "../libs/client";
 
 export default function Home({ blog }) {
-	return (
-		<Box>
-			<Heading as="h3">Nutrition Blog</Heading>
-			<UnorderedList>
-				{blog.map((blog) => (
-					<ListItem key={blog.id}>
-						<Link href={`/blog/${blog.id}`}>
-							<a>{blog.title}</a>
-						</Link>
-					</ListItem>
-				))}
-			</UnorderedList>
-		</Box>
-	);
+  return (
+    <Box>
+      <Heading as="h3">Nutrition Blog</Heading>
+      <UnorderedList>
+        {blog.map((blog) => (
+          <ListItem key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>
+              <a>{blog.title}</a>
+            </Link>
+          </ListItem>
+        ))}
+      </UnorderedList>
+    </Box>
+  );
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-	const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: "blog" });
 
-	return {
-		props: {
-			blog: data.contents,
-		},
-	};
+  return {
+    props: {
+      blog: data.contents,
+    },
+  };
 };
